@@ -48,7 +48,7 @@ func main() {
 func getParam(w http.ResponseWriter, r *http.Request) {
 	endpoint := mux.Vars(r)["PARAM"]
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(endpoint))
+	w.Write([]byte(fmt.Sprintf("Hello, %s!", endpoint)))
 }
 
 func errorPage(w http.ResponseWriter, r *http.Request) {
